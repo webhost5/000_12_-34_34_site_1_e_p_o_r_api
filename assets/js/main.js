@@ -53,3 +53,12 @@ function renderVideos(videos) {
         videoContainer.appendChild(videoCard);
     });
 }
+
+
+function show_video(embed_video){
+
+    document.querySelector("#watch_video").style.display = "flex";
+
+    document.querySelector("#embed_video").src = embed_video;
+
+}
