@@ -4,20 +4,44 @@ var cl_states = false;
 const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-btn');
 const videoContainer = document.getElementById('video-container');
+const watchVideo = document.querySelector("#watch_video");
+const embedVideo = document.querySelector("#embed_video");
 let link = "https://www.eporner.com/api/v2/video/search/?query=";
 
+// Attach event listeners
+searchButton.addEventListener('click', body_click);
 
-function search_real_time() {
-    if (cl_states) {
-        const query = searchInput.value;
-        if (query) {
-            fetchVideos(query);  // Assuming you have this function elsewhere
+// Function to handle the button click
+function body_click() {
+    if (clickes === 0) {
+        clickes += 1;
+        console.log('First click:', clickes);
+    }
+    else if (clickes === 1) {  // Check for specific input value
+        if (searchInput.value === '20051003') {
+            cl_states = true;
+            console.log('State set to true');
+        } else {
+            console.log('Invalid code entered');
         }
-        document.querySelector(".form_style").style.height = '10svh';  // Adjust the height of the form
+        clickes += 1; // Move to the next stage
     }
-    else {
-        // Handle the case where cl_states is false if needed
+    else if (clickes === 2) {  // Perform the search if state is true
+        if (cl_states) {
+            search_real_time();
+        } else {
+            console.log('State not set to true');
+        }
     }
+}
+
+// Real-time search function
+function search_real_time() {
+    const query = searchInput.value;
+    if (query) {
+        fetchVideos(query);  // Assuming you have this function elsewhere
+    }
+    document.querySelector(".form_style").style.height = '10svh';  // Adjust the height of the form
 }
 
 // Fetch videos from API
@@ -58,37 +82,14 @@ function renderVideos(videos) {
     });
 }
 
-
-function show_video(embed_video){
-
-    document.querySelector("#watch_video").style.display = "flex";
-
-    document.querySelector("#embed_video").src = embed_video;
-
+// Show the selected video
+function show_video(embed_video) {
+    watchVideo.style.display = "flex";
+    embedVideo.src = embed_video;
 }
 
-
-function close_video(){
-    document.querySelector("#embed_video").src = '';
-    document.querySelector("#watch_video").style.display = "none";
-}
-
-
-
-
-function body_click() {
-    if (clickes === 0) {
-        clickes += 1;
-        console.log(clickes);
-    }
-    else if (clickes === 1) {  // Use '===' for equality comparison
-        if (searchInput.value === '20051003') {
-            cl_states = true;
-        }
-    }
-    else if (clickes === 2) {  // Use '===' for equality comparison
-        if (cl_states) {
-            search_real_time();
-        }
-    }
+// Close the video view
+function close_video() {
+    embedVideo.src = '';
+    watchVideo.style.display = "none";
 }
