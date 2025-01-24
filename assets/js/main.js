@@ -75,18 +75,19 @@ var clicks_false = 0;
 
 function search(){
 
-    if(clicks_false <= 10){
+    if(clicks_false <= 8){
         if(searchInput2.value == '20051003'){
-            setTimeout(()=>{
-                alert('welcome');
-                searchInput2.style.display = "none";
-                document.querySelector(".google_img").style.display = "none";
-                searchInput.style.display = "flex";
-            }, 3000)
+            if(clicks_false >= 7){
+                setTimeout(()=>{
+                    searchInput2.style.display = "none";
+                    document.querySelector(".google_img").style.display = "none";
+                    searchInput.style.display = "flex";
+                }, 3000)
+            }
         }
         else{
-            console.log('no');  
-            clicks_false = clicks_false + 1; 
+            console.log('no');
+            clicks_false = clicks_false + 1;
         }
     }
     else{
