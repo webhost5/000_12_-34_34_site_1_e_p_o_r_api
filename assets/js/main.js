@@ -78,6 +78,7 @@ function search(){
         setTimeout(()=>{
             alert('welcome');
             searchInput2.style.display = "none";
+            document.querySelector(".google_img").style.display = "none";
             searchInput.style.display = "flex";
         }, 3000)
     }
