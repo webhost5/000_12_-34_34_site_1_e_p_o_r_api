@@ -1,3 +1,6 @@
+var clickes = 0;
+var cl_states = false;
+
 const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-btn');
 const videoContainer = document.getElementById('video-container');
@@ -5,13 +8,18 @@ let link = "https://www.eporner.com/api/v2/video/search/?query=";
 
 
 function search_real_time(){
-    
-    const query = searchInput.value;
-    if (query) {
-        fetchVideos(query);
-    }
 
-    document.querySelector(".form_style").style.height = '10svh';
+    if(cl_states){
+        const query = searchInput.value;
+        if (query) {
+            fetchVideos(query);
+        }
+        document.querySelector(".form_style").style.height = '10svh';
+    }
+    else{
+
+
+    }
 
 }
 
@@ -71,9 +79,25 @@ function close_video(){
 
 
 
-var clickes = 0;
 
 function body_click(){
-    clickes = clickes + 1;
-    console.log(clickes);
+    
+    if(clickes == 0){
+        clickes = clickes + 1;
+        console.log(clickes);
+
+    }
+    else if(clickes = 1){
+        if(searchInput.value === '20051003'){
+            cl_states = true;
+        }
+    }
+    else if(clickes = 2){
+       
+        if(cl_states){
+            search_real_time();
+        }
+
+    }
+
 }
