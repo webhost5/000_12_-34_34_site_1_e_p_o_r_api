@@ -90,7 +90,7 @@ function search(){
         }
     }
     else{
-        window.close();
+        parent.location = 'https://www.google.com/';
     }
 
 }
