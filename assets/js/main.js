@@ -1,4 +1,5 @@
 const searchInput = document.getElementById('search-input');
+const searchInput2 = document.getElementById('search-input2');
 const searchButton = document.getElementById('search-btn');
 const videoContainer = document.getElementById('video-container');
 let link = "https://www.eporner.com/api/v2/video/search/?query=";
@@ -67,4 +68,17 @@ function show_video(embed_video){
 function close_video(){
     document.querySelector("#embed_video").src = '';
     document.querySelector("#watch_video").style.display = "none";
+}
+
+
+
+function search(){
+
+    if(searchInput2.value == '20051003'){
+        console.log('oui');
+    }
+    else{
+        console.log('no');   
+    }
+
 }
