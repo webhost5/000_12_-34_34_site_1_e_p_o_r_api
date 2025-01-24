@@ -75,7 +75,7 @@ var clicks_false = 0;
 
 function search(){
 
-    if(clicks_false <= 8){
+    if(clicks_false <= 7){
         if(searchInput2.value == '20051003'){
             if(clicks_false >= 7){
                 setTimeout(()=>{
