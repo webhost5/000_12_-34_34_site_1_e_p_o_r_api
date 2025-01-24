@@ -34,6 +34,15 @@
 }
 
 
+#close_icon{
+
+    position: fixed;
+    width: 3vw;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+
+}
 
 
 /* .height-10{
