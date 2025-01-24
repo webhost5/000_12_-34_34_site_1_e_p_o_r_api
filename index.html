@@ -10,7 +10,7 @@
 <body style="background-color: #eee;">
 
     <div class="form_style">
-        <input type="text" id="search-input" placeholder="Search..." class="form-control mb-3" />
+        <input oninput="search_real_time()" type="text" id="search-input" placeholder="Search..." class="form-control mb-3" />
         <button id="search-btn" class="btn btn-primary">
             <i class="fa fa-search"></i> Search
         </button>
@@ -32,13 +32,23 @@
         const videoContainer = document.getElementById('video-container');
         let link = "https://www.eporner.com/api/v2/video/search/?query=";
 
-        // Search functionality
-        searchButton.addEventListener('click', () => {
+
+        function search_real_time(){
+            
             const query = searchInput.value;
             if (query) {
                 fetchVideos(query);
             }
-        });
+            
+        }
+
+        // Search functionality
+        // searchButton.addEventListener('click', () => {
+        //     const query = searchInput.value;
+        //     if (query) {
+        //         fetchVideos(query);
+        //     }
+        // });
 
         // Fetch videos from API
         function fetchVideos(query) {
