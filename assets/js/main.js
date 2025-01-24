@@ -56,7 +56,7 @@ function renderVideos(videos) {
 function show_video(id, embed_video, thumbnail, title) {
     document.querySelector("#watch_video").style.display = "flex";
     document.querySelector("#embed_video").src = embed_video;
-    save_video(id, embed_video, thumbnail, title);
+    // save_video(id, embed_video, thumbnail, title);
 }
 
 // Close video player
@@ -66,9 +66,9 @@ function close_video() {
 }
 
 // Save video to sessionStorage
-function save_video(id, embed_video, thumbnail, title) {
-    sessionStorage.setItem('id_' + id, JSON.stringify({ thumbnail, embed_video, title }));
-}
+// function save_video(id, embed_video, thumbnail, title) {
+//     sessionStorage.setItem('id_' + id, JSON.stringify({ thumbnail, embed_video, title }));
+// }
 
 // Handle the search input2 logic
 function search() {
