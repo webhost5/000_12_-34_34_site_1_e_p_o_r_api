@@ -68,3 +68,12 @@ function close_video(){
     document.querySelector("#embed_video").src = '';
     document.querySelector("#watch_video").style.display = "none";
 }
+
+
+
+var clickes = 0;
+
+function body_click(){
+    clickes = clickes + 1;
+    console.log(clickes);
+}
