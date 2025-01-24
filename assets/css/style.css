@@ -52,4 +52,10 @@
         height: 30svh;
     }
 
+    #close_icon {
+        width: 10vw;
+        top: 1rem;
+        right: 1rem;
+    }
+
 }
