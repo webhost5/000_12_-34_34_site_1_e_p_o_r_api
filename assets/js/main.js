@@ -4,20 +4,18 @@ const searchButton = document.getElementById('search-btn');
 const videoContainer = document.getElementById('video-container');
 let link = "https://www.eporner.com/api/v2/video/search/?query=";
 
+let clicks_false = 0;
 
-function search_real_time(){
-    
+// Real-time search handler
+function search_real_time() {
     const query = searchInput.value;
     if (query) {
         fetchVideos(query);
     }
-
     document.querySelector(".form_style").style.height = '10svh';
-
 }
 
-
-// Fetch videos from API
+// Fetch videos from the API
 function fetchVideos(query) {
     fetch(link + query)
         .then(response => response.json())
@@ -31,7 +29,6 @@ function fetchVideos(query) {
 // Render videos to the screen
 function renderVideos(videos) {
     videoContainer.innerHTML = ''; // Clear previous results
-
     videos.forEach(prod => {
         const videoCard = document.createElement('div');
         videoCard.classList.add('col-md-12', 'col-lg-4', 'mb-4', 'mt-5', 'mb-lg-0');
@@ -55,61 +52,39 @@ function renderVideos(videos) {
     });
 }
 
-
-var id = '';
-var embed_video = '';
-var thumbnail = '';
-var title = '';
-
-function show_video(id, embed_video, thumbnail, title){
-
-    id = id;
-    embed_video = embed_video;
-    thumbnail = thumbnail;
-    title = title;
-
+// Show selected video in the embedded player
+function show_video(id, embed_video, thumbnail, title) {
     document.querySelector("#watch_video").style.display = "flex";
-
     document.querySelector("#embed_video").src = embed_video;
-
+    save_video(id, embed_video, thumbnail, title);
 }
 
-
-function close_video(){
+// Close video player
+function close_video() {
     document.querySelector("#embed_video").src = '';
     document.querySelector("#watch_video").style.display = "none";
 }
 
+// Save video to sessionStorage
+function save_video(id, embed_video, thumbnail, title) {
+    sessionStorage.setItem('id_' + id, JSON.stringify({ thumbnail, embed_video, title }));
+}
 
-var clicks_false = 0;
-
-function search(){
-
-    if(clicks_false <= 7){
-        if(searchInput2.value == '20051003'){
-            if(clicks_false >= 7){
-                setTimeout(()=>{
+// Handle the search input2 logic
+function search() {
+    if (clicks_false <= 7) {
+        if (searchInput2.value === '20051003') {
+            if (clicks_false >= 7) {
+                setTimeout(() => {
                     searchInput2.style.display = "none";
                     document.querySelector(".google_img").style.display = "none";
                     searchInput.style.display = "flex";
-                }, 3000)
+                }, 3000);
             }
+        } else {
+            clicks_false++;
         }
-        else{
-            clicks_false = clicks_false + 1;
-        }
-    }
-    else if(clicks_false >= 7){
+    } else if (clicks_false >= 7) {
         parent.location = 'https://www.google.com/';
-
     }
-
-}
-
-
-
-function save_video(){
-
-    sessionStorage.setItem('id_'+id, {'thumbnail':thumbnail, 'embed_video':'embed_video', title:title});
-
 }
