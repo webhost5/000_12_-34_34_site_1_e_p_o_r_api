@@ -53,6 +53,17 @@
 
 }
 
+
+#save_icon{
+
+    position: fixed;
+    width: 3vw;
+    top: 2rem;
+    left: 2rem;
+    cursor: pointer;
+
+}
+
 .google_img{
     width: 20vw;
     position: absolute;
