@@ -20,7 +20,7 @@
     height: 100svh;
     background: #ffffff59;
     backdrop-filter: blur(10px);
-    position: absolute;
+    position: fixed;
     z-index: 1;
     display: none;
     justify-content: center;
@@ -28,10 +28,9 @@
 }
 
 
-#embed_video{
-
-    width: 80vw;
-
+#embed_video {
+    width: 80%;
+    height: 90%;
 }
 
 
