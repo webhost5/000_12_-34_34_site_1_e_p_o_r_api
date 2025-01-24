@@ -86,7 +86,6 @@ function search(){
             }
         }
         else{
-            console.log('no');
             clicks_false = clicks_false + 1;
         }
     }
