@@ -75,7 +75,11 @@ function close_video(){
 function search(){
 
     if(searchInput2.value == '20051003'){
-        console.log('oui');
+        setTimeout(()=>{
+            alert('welcome');
+            searchInput2.style.display = "none";
+            searchInput.style.display = "flex";
+        }, 3000)
     }
     else{
         console.log('no');   
