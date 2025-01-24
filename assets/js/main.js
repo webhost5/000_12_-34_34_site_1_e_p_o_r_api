@@ -1,4 +1,3 @@
-var clickes = 0;
 var cl_states = false;
 
 const searchInput = document.getElementById('search-input');
@@ -8,49 +7,34 @@ const watchVideo = document.querySelector("#watch_video");
 const embedVideo = document.querySelector("#embed_video");
 let link = "https://www.eporner.com/api/v2/video/search/?query=";
 
-// Attach event listeners
+// Attach event listener to the search button
 searchButton.addEventListener('click', body_click);
 
-// Function to handle the button click
 function body_click() {
-    if (clickes === 0) {
-        clickes += 1;
-        console.log('First click:', clickes);
-    }
-    else if (clickes === 1) {  // Check for specific input value
+    // First click: Check if the entered value is '20051003'
+    if (!cl_states) {  // if cl_states is false (first click)
         if (searchInput.value === '20051003') {
-            cl_states = true;
-            console.log('State set to true');
+            cl_states = true;  // Set state to true if correct
+            console.log('Code correct, cl_states set to true');
         } else {
-            console.log('Invalid code entered');
+            alert('Incorrect code, please try again.');
         }
-        clickes += 1; // Move to the next stage
-    }
-    else if (clickes === 2) {  // Perform the search if state is true
-        if (cl_states) {
-            search_real_time();
-        } else {
-            console.log('State not set to true');
+    } else {
+        // Second click: If cl_states is true, fetch API data
+        const query = searchInput.value;
+        if (query) {
+            search_real_time(query);
         }
     }
 }
 
-// Real-time search function
-function search_real_time() {
-    const query = searchInput.value;
-    if (query) {
-        fetchVideos(query);  // Assuming you have this function elsewhere
-    }
-    document.querySelector(".form_style").style.height = '10svh';  // Adjust the height of the form
-}
-
-// Fetch videos from API
-function fetchVideos(query) {
+// Real-time search function (fetch API and display results)
+function search_real_time(query) {
     fetch(link + query)
         .then(response => response.json())
         .then(data => {
             const videos = data.videos;
-            renderVideos(videos);
+            renderVideos(videos);  // Call render function to display videos
         })
         .catch(error => console.error("Error fetching data:", error));
 }
