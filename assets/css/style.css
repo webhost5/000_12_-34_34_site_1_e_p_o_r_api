@@ -95,4 +95,16 @@
         margin-top: 4rem;
     }
 
+    .google_img{
+        width: 40vw;
+        top: 40%;
+    }
+
+    #search-input2{
+        width: 85vw;
+        height: 14vw;
+        border-radius: 20px;
+        padding-left: 20px;
+    }
+
 }
