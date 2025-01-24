@@ -43,7 +43,7 @@ function renderVideos(videos) {
                     <div class="text-center mt-1">
                         <h4 class="card-title">${prod.title}</h4>
                     </div>
-                    <a onclick="show_video('${prod.id}', '${prod.embed}', ${prod.default_thumb.src}, '${prod.title})">
+                    <a onclick="show_video('${prod.id}', '${prod.embed}', '${prod.default_thumb.src}', '${prod.title})">
                         <div class="btn btn-danger bg-danger text-light w-100 p-3 mx-n3 mb-4" style="background-color: #eff1f2;">
                             <h5 class="mb-0 text-center hover-shadow">Watch now <span>${prod.length_min} Min</span></h5>
                         </div>
