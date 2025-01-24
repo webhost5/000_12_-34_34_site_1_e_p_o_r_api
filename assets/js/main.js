@@ -63,10 +63,10 @@ var title = '';
 
 function show_video(id, embed_video, thumbnail, title){
 
-    var id = id;
-    var embed_video = embed_video;
-    var thumbnail = thumbnail;
-    var title = title;
+    id = id;
+    embed_video = embed_video;
+    thumbnail = thumbnail;
+    title = title;
 
     document.querySelector("#watch_video").style.display = "flex";
 
