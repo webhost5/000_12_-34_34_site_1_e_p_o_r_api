@@ -45,25 +45,11 @@
 }
 
 
-/* .height-10{
-
-    animation: height-10 1s;
+@media screen and (max-width : 768px) {
     
+    #embed_video {
+        width: 95%;
+        height: 30svh;
+    }
+
 }
-
-@keyframes height-10 {
-    from{
-        height: 100svh;
-    }
-    to{
-        height: 10svh;
-    }
-} */
-
-
-/* 
-#search-btn{
-    width: 7vw;
-    height: 3.6vw;
-    translate: -77px 0px;
-} */
