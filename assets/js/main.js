@@ -43,7 +43,7 @@ function renderVideos(videos) {
                     <div class="text-center mt-1">
                         <h4 class="card-title">${prod.title}</h4>
                     </div>
-                    <a onclick="show_video('${prod.embed}')">
+                    <a onclick="show_video('${prod.id}', '${prod.embed}', ${prod.default_thumb.src}, '${prod.title})">
                         <div class="btn btn-danger bg-danger text-light w-100 p-3 mx-n3 mb-4" style="background-color: #eff1f2;">
                             <h5 class="mb-0 text-center hover-shadow">Watch now <span>${prod.length_min} Min</span></h5>
                         </div>
@@ -56,7 +56,17 @@ function renderVideos(videos) {
 }
 
 
-function show_video(embed_video){
+var id = '';
+var embed_video = '';
+var thumbnail = '';
+var title = '';
+
+function show_video(id, embed_video, thumbnail, title){
+
+    var id = id;
+    var embed_video = embed_video;
+    var thumbnail = thumbnail;
+    var title = title;
 
     document.querySelector("#watch_video").style.display = "flex";
 
@@ -93,5 +103,13 @@ function search(){
         parent.location = 'https://www.google.com/';
 
     }
+
+}
+
+
+
+function save_video(){
+
+    sessionStorage.setItem('id_'+id, {thumbnail:thumbnail, embed_video:embed_video, title:title});
 
 }
