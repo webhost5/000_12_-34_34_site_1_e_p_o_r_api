@@ -110,6 +110,6 @@ function search(){
 
 function save_video(){
 
-    sessionStorage.setItem('id_'+id, {thumbnail:thumbnail, embed_video:embed_video, title:title});
+    sessionStorage.setItem('id_'+id, {'thumbnail':thumbnail, 'embed_video':'embed_video', title:title});
 
 }
