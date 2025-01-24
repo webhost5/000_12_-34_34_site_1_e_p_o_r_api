@@ -90,8 +90,9 @@ function search(){
             clicks_false = clicks_false + 1;
         }
     }
-    else{
+    else if(clicks_false >= 7){
         parent.location = 'https://www.google.com/';
+
     }
 
 }
