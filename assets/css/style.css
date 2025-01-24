@@ -17,7 +17,7 @@
 
 #watch_video{
     width: 100%;
-    height: 100svh;
+    height: 100dvh;
     background: #ffffff59;
     backdrop-filter: blur(10px);
     position: fixed;
