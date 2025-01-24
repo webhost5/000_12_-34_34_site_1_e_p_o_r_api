@@ -58,4 +58,12 @@
         right: 1rem;
     }
 
+
+    #search-input {
+        width: 80vw;
+        height: 13vw;
+        border-radius: 20px;
+        padding-left: 20px;
+    }
+
 }
