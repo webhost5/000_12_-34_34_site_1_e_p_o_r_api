@@ -62,3 +62,9 @@ function show_video(embed_video){
     document.querySelector("#embed_video").src = embed_video;
 
 }
+
+
+function close_video(){
+    document.querySelector("#embed_video").src = '';
+    document.querySelector("#watch_video").style.display = "none";
+}
