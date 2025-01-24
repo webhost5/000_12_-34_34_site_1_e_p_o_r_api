@@ -14,6 +14,22 @@
     padding-left: 20px;
 }
 
+.height-10{
+
+    animation: height-10 1s;
+    
+}
+
+@keyframes height-10 {
+    from{
+        height: 100svh;
+    }
+    to{
+        height: 10svh;
+    }
+}
+
+
 /* 
 #search-btn{
     width: 7vw;
