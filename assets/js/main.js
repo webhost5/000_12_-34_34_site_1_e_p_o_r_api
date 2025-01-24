@@ -7,22 +7,18 @@ const videoContainer = document.getElementById('video-container');
 let link = "https://www.eporner.com/api/v2/video/search/?query=";
 
 
-function search_real_time(){
-
-    if(cl_states){
+function search_real_time() {
+    if (cl_states) {
         const query = searchInput.value;
         if (query) {
-            fetchVideos(query);
+            fetchVideos(query);  // Assuming you have this function elsewhere
         }
-        document.querySelector(".form_style").style.height = '10svh';
+        document.querySelector(".form_style").style.height = '10svh';  // Adjust the height of the form
     }
-    else{
-
-
+    else {
+        // Handle the case where cl_states is false if needed
     }
-
 }
-
 
 // Fetch videos from API
 function fetchVideos(query) {
@@ -80,24 +76,19 @@ function close_video(){
 
 
 
-function body_click(){
-    
-    if(clickes == 0){
-        clickes = clickes + 1;
+function body_click() {
+    if (clickes === 0) {
+        clickes += 1;
         console.log(clickes);
-
     }
-    else if(clickes = 1){
-        if(searchInput.value === '20051003'){
+    else if (clickes === 1) {  // Use '===' for equality comparison
+        if (searchInput.value === '20051003') {
             cl_states = true;
         }
     }
-    else if(clickes = 2){
-       
-        if(cl_states){
+    else if (clickes === 2) {  // Use '===' for equality comparison
+        if (cl_states) {
             search_real_time();
         }
-
     }
-
 }
