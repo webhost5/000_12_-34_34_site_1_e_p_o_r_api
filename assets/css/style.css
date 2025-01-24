@@ -22,6 +22,7 @@
     backdrop-filter: blur(10px);
     position: absolute;
     z-index: 1;
+    display: none;
 }
 
 
