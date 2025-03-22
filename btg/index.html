@@ -12,15 +12,16 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             transition: transform 0.3s;
+            cursor: pointer;
         }
 
         .card:hover {
             transform: translateY(-5px);
         }
 
-        .card-body p {
-            font-family: 'Courier New', Courier, monospace;
-            color: #555;
+        .card img {
+            width: 100%;
+            border-radius: 10px;
         }
 
         .video-container {
@@ -32,11 +33,6 @@
             width: 100%;
             max-width: 800px;
             border-radius: 10px;
-        }
-
-        .icon i {
-            font-size: 2.5rem;
-            color: #007bff;
         }
     </style>
 </head>
@@ -59,38 +55,26 @@
         // Fetch the competence data
         fetch('./data.json')
             .then(response => response.json())
-            .then(competence => {
-                competence.forEach((comp, i) => {
+            .then(data => {
+                // Iterate over the data to create cards
+                data.forEach(item => {
                     const cardDiv = document.createElement('div');
-                    cardDiv.className = "col-md-12 col-lg-4 mb-4 mb-lg-0";
+                    cardDiv.className = "col-md-4 mb-4";
 
                     cardDiv.innerHTML = `
-                        <a href="#pro" onclick="document.querySelector('#skills').style.display = 'block';document.querySelector('#iframeOFskills').src = './src/skills/${comp.title}.html';">
-                            <div class="card p-3">
-                                <div class="icon d-flex justify-content-between">
-                                    <h1><i class="${comp.icon_src}"></i></h1>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between">
-                                        <h2 class="mb-0">${comp.title}</h2>
-                                    </div>
-                                    <div class="d-flex justify-content-between mb-2">
-                                        <p class="mt-2">${comp.text}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+                        <div class="card" onclick="showVideo('${item.videoSrc}')">
+                            <img src="${item.imageSrc}" alt="${item.title}">
+                        </div>
                     `;
                     competenceContainer.appendChild(cardDiv);
                 });
 
-                // Load the last video dynamically
-                const lastCompetence = competence[competence.length - 1];
-                const videoPlayer = document.getElementById("video-player");
-                videoPlayer.src = lastCompetence.videoSrc;
-
-                // Set the title of the video section
-                document.querySelector("#video-container h1").textContent = `Watch the Latest Video: ${lastCompetence.title || 'No Title'}`;
+                // Function to show the video when a card is clicked
+                window.showVideo = function(videoSrc) {
+                    const videoPlayer = document.getElementById("video-player");
+                    videoPlayer.src = videoSrc;
+                    videoPlayer.play();
+                };
             })
             .catch(error => {
                 console.error("Error fetching data: " + error);
