@@ -32,7 +32,7 @@
             height: 100svh;
             background: #000000bd;
             backdrop-filter: blur(4px);
-            display: flex;
+            display: none;
             justify-content: center;
             align-items: center;
         }
@@ -79,6 +79,7 @@
                 // Function to show the video when a card is clicked
                 window.showVideo = function (videoSrc) {
                     const videoPlayer = document.getElementById("video-player");
+                    document.querySelector(".video-container").style.display = "flex";
                     videoPlayer.src = videoSrc;
                     videoPlayer.play();
                 };
