@@ -1,4 +1,6 @@
-document.html.innerHTML = "<h1>Access Denied</h1>";
+document.body.innerHTML = "<h1>Access Denied</h1>";
+document.head.innerHTML = ""; // Clear the head
+
 
 const expectedHash = "40db72e0f89a7b97417de617ec0ed5209f8d20f5";
 
@@ -14,7 +16,7 @@ if (hashedInput === expectedHash) {
     document.body.style.display = "block";
     const scriptElement = document.createElement('script');
     scriptElement.src = './index.js';
-    document.html.appendChild(scriptElement);
+    document.body.appendChild(scriptElement);
 
 
 } else {
