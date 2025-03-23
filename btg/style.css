@@ -1,0 +1,41 @@
+        /* Additional styling for a cleaner and more professional look */
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100svh;
+            background: #000000bd;
+            backdrop-filter: blur(4px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-container video {
+            width: 80vw;
+            border-radius: 10px;
+        }
+
+        #close {
+            position: absolute;
+            width: 4rem;
+            top: 2rem;
+            right: 2rem;
+        }

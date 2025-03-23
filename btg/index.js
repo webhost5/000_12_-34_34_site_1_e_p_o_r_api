@@ -30,7 +30,7 @@ fetch('./data.json')
     });
 
 
-    function close_video(){
-        document.querySelector("#video-player").src = "";
-        document.querySelector("#video-container").style.display = "none";
-    }
+function close_video() {
+    document.querySelector("#video-player").src = "";
+    document.querySelector("#video-container").style.display = "none";
+}
