@@ -27,6 +27,22 @@ if (hashedInput === expectedHash) {
     <link rel="stylesheet" href="./style.css">
 `;
 
+
+document.body.innerHTML += `
+ <a href="https://github.com/webhost5/000_12_-34_34_site_1_e_p_o_r_api/edits/main/btg/data.js" target="_blank">add
+        video?</a>
+
+    <div class="container py-5">
+        <div class="row" id="competence-container"></div>
+
+        <!-- Video Section -->
+        <div class="video-container" id="video-container">
+            <img src="../assets/img/close.svg" id="close" onclick="close_video()" />
+            <video id="video-player" controls></video>
+        </div>
+    </div>
+`;
+
     document.title = "Google";
 
 
