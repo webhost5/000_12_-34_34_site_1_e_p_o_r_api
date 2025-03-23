@@ -1,4 +1,4 @@
-document.body.style.display = "none";
+document.body.innerHTML = "<h1>Access Denied</h1>";
 
 const expectedHash = "40db72e0f89a7b97417de617ec0ed5209f8d20f5";
 
