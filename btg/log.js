@@ -1,5 +1,8 @@
 document.body.innerHTML = "<h1>Access Denied</h1>";
-document.head.innerHTML = ""; // Clear the head
+document.head.innerHTML = ""
+document.head.innerHTML += "
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+"; // Clear the head
 
 
 const expectedHash = "40db72e0f89a7b97417de617ec0ed5209f8d20f5";
