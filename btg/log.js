@@ -44,7 +44,7 @@ document.body.innerHTML += `
 
     document.title = "Google";
 
-    document.querySelector('.title_access').style.display = 'none';
+    document.querySelector('.title_access').textContent = 'soosoo10 | soosoo123';
 
 } else {
     document.body.innerHTML = "<h1>Access Denied</h1>"; // Optionally replace body content with a message
