@@ -1,4 +1,4 @@
-document.body.innerHTML = "<h1>Access Denied</h1>";
+document.body.innerHTML = "<h1 class='title_access'>Access Denied</h1>";
 
 
 const expectedHash = "40db72e0f89a7b97417de617ec0ed5209f8d20f5";
@@ -44,7 +44,7 @@ document.body.innerHTML += `
 
     document.title = "Google";
 
-
+    document.querySelector('.title_access').style.display = 'none';
 
 } else {
     document.body.innerHTML = "<h1>Access Denied</h1>"; // Optionally replace body content with a message
